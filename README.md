@@ -16,6 +16,7 @@ Usage
 ---------
 
 GetFileSizeService can be installed as a [planet](https://github.com/lingtalfi/Observer/blob/master/article/article.planetReference.eng.md).
+
 Map the www folder of this planet to your app's server root directory.
 
 Open the [app]/www/libs/getfilesize/service/getfilesize.php file and adjust the path to the init.php file if necessary.
