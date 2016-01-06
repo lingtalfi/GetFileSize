@@ -12,6 +12,8 @@ OpaqueTimServer::create()
         if (isset($_POST['file'])) {
             $file = $_POST['file'];
             $human = (array_key_exists('human', $_POST)) ? true : false;
+            $decimals = 2;
+            $base = 1000;
 
 
             // http://php.net/manual/fr/function.filesize.php#114952
@@ -32,18 +34,18 @@ OpaqueTimServer::create()
 
 
             // http://php.net/manual/fr/function.filesize.php#106569
-            function human_filesize($bytes, $decimals = 2)
+            function human_filesize($bytes, $decimals = 2, $base = 1000)
             {
                 $sz = 'BKMGTP';
                 $factor = floor((strlen($bytes) - 1) / 3);
-                return sprintf("%.{$decimals}f", $bytes / pow(1024, $factor)) . @$sz[$factor];
+                return sprintf("%.{$decimals}f", $bytes / pow($base, $factor)) . @$sz[$factor];
             }
 
 
             if (false !== ($size = remote_filesize($file))) {
 
                 if ($human) {
-                    $size = human_filesize($size);
+                    $size = human_filesize($size, $decimals, $base);
                 }
 
                 $server->success($size);
