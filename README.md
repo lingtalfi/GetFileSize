@@ -93,6 +93,11 @@ Dependencies
 History Log
 ------------------
     
+- 1.1.0 -- 2016-01-06
+
+    - add protocol check (http or https) for security
+    
+    
 - 1.0.0 -- 2016-01-06
 
     - initial commit
