@@ -16,7 +16,7 @@ Install
 
 Using the [uni tool](https://github.com/lingtalfi/universe-naive-importer)
 ```bash
-uni import GetFileSize
+uni import Ling/GetFileSize
 ```
 
 
